@@ -1,136 +1,155 @@
-% LaTeX file for resume 
-% This file uses the resume document class (res.cls)
+%% start of file `template.tex'.
+% This file was downloaded and modified from OverLeaf.com.
+% Uses moderncv.
 
-\documentclass[margin]{res}
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font  
-\topmargin=-.75in  % start text higher on the page
-\setlength{\textheight}{11in} % increase text height to fit resume on 1 page
-\usepackage{fontspec}
-\setmainfont{Carlito}
+\documentclass[11pt,letterpaper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\begin{document}  
-\name{NEWMAN PERRY CATE}
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-\address{www.perrycate.me \\ NPCate01@gmail.com \\ (803) 509 - 1073}
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
-\begin{resume}                        
+% adjust the page margins
+\usepackage[scale=0.9, top=.5in, bottom=.5in]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-\section{EDUCATION}
-            Princeton University class of 2019\\
-            BSE Computer Science Major\\
-            Classes taken: Algorithms/Data Structures, Programming Systems,
-            Reasoning about Computation, Operating Systems, Introduction to Logic Design,
-            Advanced Programming Techniques, Computer Networks
+\usepackage{import}
 
+% personal data
+\name{Newman Perry}{Cate}                              % optional, remove / comment the line if not wanted
+\phone[mobile]{(803) 509 - 1073}                   % optional, remove / comment the line if not wanted               
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+\email{NPCate01@gmail.com}                               % optional, remove / comment the line if not wanted
+\social[github]{PerryCate}
+%\homepage{www.myname.webs.com}                     % TODO
 
-\section{SKILLS} \topmargin=-1in
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
 
-\normalsize{\section{Languages}}
-       \begin{ncolumn}{3}
-           {\bf Experienced With}  & {\bf Proficient With} & {\bf Have Used} \\
-           Python 3                & Go                    & TypeScript      \\
-           Java                    & JavaScript            & Ruby            \\
-           PHP                     & HTML5 + CSS3          & Bash            \\
-                                   & MySQL                 & ActionScript    \\
-                                   & C                     & Visual Basic    \\
-        \end{ncolumn}
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
-\normalsize{\section{Tools}}
-    \begin{itemize} \itemsep -2pt % reduce space between items
-        \item Extensive use of Git and Mercurial Version Control Systems
-        \item Proficient using Maven for building projects
-        \item Have used Linux as my primary OS for years
-        \item Frequently manage personal Linux servers for file storage, project hosting
-        \item Learning Node.js
+\vspace{-25pt}
+
+%\small{Undergraduate electrical and electronic engineer completing the final year of a master's degree. Passionate about science, with strong technical, business, and interpersonal skills for working in a team and successfully completing a project.}
+
+\section{Academics}
+
+\begin{itemize}
+
+\item{\cventry{September 2015 -- June 2019}{BSE Computer Science (GPA 3.3, Departmental 3.8), Certificate in Entrepreneurship}{Princeton University}{}{}{
+\begin{itemize}
+\item{\textbf{Course Assistant}: Operating Systems (Fall 2017, 2018), Networks (Spring 2017)}
+\item{\textbf{Select CS Courses}: Algorithms and Data Structures, Operating Systems, Computer Networks, Functional Programming, Information Security, Computer Graphics, Distributed Systems, Computing and Optimization}
+\item{\textbf{Entrepreneurship Courses}: Leadership Development for Business, Creativity Innovation and Design, Entrepreneurial Leadership}
+\item{\textbf{Extracurriculars}: Princeton ACM, Princeton Autonomous Vehicle Engineering, Lobster Club Improv Comedy, Acapellago a capella}
+\end{itemize}
+}
+}
+
+\item{\cventry{June 2016 -- August 2016}{Princeton In Beijing Chinese Language Program}{Beijing Normal University}{}{}{}}  % arguments 3 to 6 can be left empty
+
+\end{itemize}
+
+\vspace{-5pt}
+\section{Employment} 
+
+\begin{itemize}
+
+\item{\cventry{June 2018 -- August 2018}{Software Developer Intern - Data Orchestration}{1010data}{}{}{
+    \begin{itemize} %\itemsep -2pt
+		\item Created plugins and new DAG Workflows for Apache Airflow using Flask 
+		\item Worked with project shareholders to determine project scope and acquire iterative feedback
+		\item Built comprehensive early-warning system for missing records in data pipeline with Python 3 and Redis, reducing error turnaround by up to 23 hours.
     \end{itemize}
+}}
 
-\normalsize{\section{Libraries}}
-    \begin{itemize} \itemsep -2pt
-        \item Python 3 Standard Libraries, including unit testing, threads, and sockets
-        \item Java 8 Standard Libraries, especially relating to File I/O
-        \item Gson Java Library for serializing and deserializing JSON data
-        \item Proficient with Angular.js
-        \item Have worked with Google Web Toolkit
-        \item Learning React.js
-    \end{itemize}
- 
-
-
-\section{EXPERIENCE}      
-
-    \begin{tabular}{p{3.5in} p{3in}} % setup 2 columns, first is 3.5 inches wide
-        Software Developer Intern at 1010data & June 2018 - August 2018
-    \end{tabular}
-    \begin{itemize} \itemsep -2pt
-        \item Current position
-        \item Member of the Data Orchestration Team
-        \item Skills required included concurrent programming and reading/understanding legacy code
-
-* Maintaining and Improving Data pipeline
-* Working with project shareholders to determine project scope and acquire iterative feedback
-* Writing extensions for Apache Airflow
-* Tools in use include Python 3, Flask, JavaScript, D3.js
-    \end{itemize}
-
-    \begin{tabular}{p{3.5in} p{3in}} % setup 2 columns, first is 3.5 inches wide
-        Production Engineering Intern at Facebook & June 2017 - September 2017
-    \end{tabular}
-    \begin{itemize} \itemsep -2pt
-        \item Designed and implemented a full rewrite of Traffic Infrastructure health checking service
+\item{\cventry{June 2017 -- September 2017}{Production Engineer Intern - Traffic Infrastructure}{Facebook}{}{}{
+    \begin{itemize} %\itemsep -2pt
+        \item Designed and implemented a full rewrite of Traffic Infrastructure health checking service in Python 3
         \item Emphasized extensible, maintainable architecture and robust testing framework
         \item Skills required included concurrent programming and reading/understanding legacy code
     \end{itemize}
+}}
 
-
-    \begin{tabular}{p{3.5in} p{3in}}
-        GraySail LLC, Columbia, SC        & June 2014 - August 2015
-    \end{tabular}
-    \begin{itemize} \itemsep -2pt
-        \item Worked on Custom Lab Inspection / Radiation Tracking software
-        \item Used Frontend angular.js with asynchronous calls to custom ORM backend
-        \item Started as Summer internship, was hired afterwards (while still in high school)
-        \item Worked 15 months total until starting college
-	\end{itemize}
-
-    \begin{tabular}{p{3.5in} p{3in}}
-        GroupMe-Utils (Side Project) & June 2016 - Present
-    \end{tabular}
-    \begin{itemize} \itemsep -2pt
-        \item Wrote and Maintain Java Wrapper for interacting with GroupMe messaging app
-        \item Developed utilities for dumping large chats to text files and analyzing message data
-        \item Wrote and maintain a chat bot utilizing Microsoft Cognitive Services to analyze images
+\item{\cventry{June 2014 -- August 2015}{Software Developer (Full-time during summers, part-time during school year)}{GraySail LLC}{}{}{
+    \begin{itemize} %\itemsep -2pt
+        \item Developed Custom Lab Inspection / Radiation Tracking software
+        \item Used frontend angular.js with asynchronous calls to custom ORM backend written in PHP.
+        \item Started as Summer internship, was hired afterwards. Worked 15 months until starting college
     \end{itemize}
-\section{AWARDS}
-            Eagle Scout \\
-            Jane Street ``eth1'' hackathon @ Princeton University - 1st Place \\
-            Google Games Spring 2016 @ Google NY Headquarters - 1st Place \\
-            BDPA 2014 National High School Programming Competition @ Indianapolis, IN - 2nd Place
+}}
 
-\section{OTHER ACTIVITIES}
-            Open Source Contributor \\
-            President of Princeton ACM Student Chapter\\
-            Teaching Assistant for Princeton's Operating Systems course, COS 318.\\
-            Member of a capella and improvizational comedy groups\\
-            Graduate of ``Princeton in Beijing'' Mandarin Chinese Summer Language Program
+\end{itemize}
 
-\section{REFERENCES}
-    \hspace*{-.60in}
-    \begin{tabular}{p{2.75in} p{1.25in} p{2in}}
-            Hoke Currie, CEO of GraySail LLC & (803) 227-0787 x 6102 & hoke@graysail.com \\
-            Robert Dondero, Programming Systems Lecturer & (609) 258-2211 & rdondero@cs.princeton.edu
-    \end{tabular}
- 
+\vspace{-5pt}
+\section{Projects and Leadership}
 
- 
-\end{resume} 
+\begin{itemize}
+
+\item{\cventry{Spring 2018 -- Present}{Spring Independent Work}{Uniform-Chat-API}{}{}{Developed a Python 3 web server that exposes a single, uniform, RESTful interface to interact with multiple chat services at once. Relied on the Falcon microservices framework.}
+}
+
+\item{\cventry{June 2016 -- Fall 2017}{Personal Project}{GroupMe-Utils}{}{}{GroupMe API wrapper written in Java. Includes multiple utilities for saving chat data and performing statistical analysis. Replaces several older projects previously written in Python 3.}
+}
+
+\item{\cventry{March 2017 -- March 2018}{President}{Princeton ACM (Programming Club)}{}{}{Led programming club in organizing biweekly talks and events, weekly newsletters, and programming competitions. Regular attendance more than doubled, with maximum turnout increasing from 35 to 80+.}
+}
+
+\end{itemize}
+
+\vspace{-5pt}
+\section{Skills and Awards}
+
+\begin{itemize}
+
+\item \textbf{Programming Languages:} Python 3, Java, OCaml, Go, C, Bash, PHP, JavaScript, HTML+CSS, SQL, K, Rust
+
+\item \textbf{Tools:} Linux, Redis, Airflow, Git, Docker, Pip/Virtualenv, Mercurial, Maven, PostgreSQL, MySQL, React, Angular.js
+
+%\item{NavTalent talent network, associate}
+
+\item{\textbf{1st Place}: Google Games NYC Spring 2018, 2016, Jane Street "eth1" Fall 2015}
+\item{\textbf{2nd Place}: BDPA 2014 National High School Programming Competition}
+\item{\textbf{Eagle Scout}: Led troop in refurbishing collected computers, donated them to Habitat for Humanity}
+\end{itemize}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
 \end{document}
 
 
-
-
-
-
-
-
-
+%% end of file `template.tex'.
